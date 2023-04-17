@@ -33,7 +33,7 @@ function App() {
             </div>
             
             <div className="row">
-              <CalcButton value={"M+"} onClick = { () => {dispatch(addMemory())}}/>
+              <CalcButton value={"M+"}/>
               <CalcButton value={"MR"}/>
               <CalcButton value={"MC"}/>
             </div>

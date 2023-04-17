@@ -46,11 +46,6 @@ export const reducer = (state, action) => {
                 ...state,
                 total: action.payload
             }); 
-        case(MEMORY_ADD):
-            return({
-                ...state,
-                memory: state.total
-            })  
         default:
             return state;
     }

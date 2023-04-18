@@ -1,10 +1,12 @@
 import React, {useReducer} from 'react';
-import { reducer } from '../reducers/index';
+import  reducer  from '../reducers/index';
 import { initialState } from '../reducers/index';
 import { applyNumber, 
   changeOperation, 
   clearDisplay,
   addMemory,
+  applyMemory,
+  clearMemory,
  } from '../actions/index';
 import './App.css';
 
@@ -15,6 +17,19 @@ import CalcButton from './CalcButton';
 function App() {
 
   const [ state, dispatch ] = useReducer ( reducer, initialState ) ; 
+
+  const handleMemoryAdd = () => {
+    dispatch(addMemory());
+  }
+
+  const handleapplyMemory = () => {
+    dispatch(applyMemory());
+  }
+
+  const handleclearMemory = () => {
+    dispatch(clearMemory());
+  }
+
 
   return (
     <div className="App">
@@ -33,9 +48,9 @@ function App() {
             </div>
             
             <div className="row">
-              <CalcButton value={"M+"}/>
-              <CalcButton value={"MR"}/>
-              <CalcButton value={"MC"}/>
+              <CalcButton value={"M+"} onClick = { handleMemoryAdd }/>
+              <CalcButton value={"MR"} onClick = { handleapplyMemory}/>
+              <CalcButton value={"MC"} onClick = { handleclearMemory}/>
             </div>
 
             <div className="row">
